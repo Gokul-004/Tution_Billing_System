@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1000px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            color: #00796b;
+        }
+
+        .card p {
+            margin: 0;
+            color: #555;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            color: #ffffff;
+            background-color: #00796b;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: #004d40;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 90%;
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Default Admin</h2>
+            <p>Manage the entire system, oversee all operations, and ensure everything runs smoothly. Click below to access the admin dashboard.</p>
+            <a href="{% url 'admin:index' %}">Go to Admin Panel</a>
+        </div>
+        <div class="card">
+            <h2>Branch Admin</h2>
+            <p>Manage your branch's details, monitor activities, and handle your specific tasks. Click below to access the branch admin dashboard.</p>
+            <a href="{% url 'branch_login' %}">Login as Branch Admin</a>
+        </div>
+    </div>
+</body>
+</html>
